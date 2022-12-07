@@ -1,0 +1,22 @@
+.home{
+    inline-size: 90%;
+    block-size: 100%;
+}
+.createnote-btn-wrapper{
+    position: fixed;
+    inset-block-end: 20px;
+    inset-inline-end: 40px;
+    inline-size: 50px;
+    block-size: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.3) ,-1px -1px 5px rgba(119, 119, 119, 0.3);
+}
+.createnote-btn{
+    block-size: 100%;
+    inline-size:100% ;
+    border-radius: 50%;
+    border:0;
+    cursor: pointer;
+    background-color: rgb(133, 153, 255);
+    color:white;
+}

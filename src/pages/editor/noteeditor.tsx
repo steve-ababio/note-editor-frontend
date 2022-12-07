@@ -17,6 +17,7 @@ const ALIGN_TYPE = {
     right:"right"
 };
 type FetchBodyType = object|string|null;
+const ORIGIN =  "https://noteeditor2.onrender.com";
 export default function NoteEditor(){
     const title = useRef("");   
     const note = useRef(""); 
@@ -65,11 +66,11 @@ export default function NoteEditor(){
     function handleNotes(e:React.ChangeEvent<HTMLTextAreaElement>){
         note.current = e.currentTarget.value;        
         if(mode === EDITOR_MODE.EDITING_MODE){   
-            updateDebounce(` https://noteeditor2.onrender.com/note/:${location.state.id}`);
+            updateDebounce(`${ORIGIN}/note/:${location.state.id}`);
         }
     }
     async function checkTitleAvailability(){
-        const url = ` https://noteeditor2.onrender.com/title/:${title.current}`
+        const url = `${ORIGIN}/title/:${title.current}`
         const response = await sendRequest(url,"GET");
         return response;
     }
@@ -101,12 +102,12 @@ export default function NoteEditor(){
             }   
         }     
         if(mode === EDITOR_MODE.EDITING_MODE){
-            url = `http://localhost:8000/note/:${location.state.id}`;
+            url = `${ORIGIN}/note/:${location.state.id}`;
             method = "PUT";
             body = {note:note.current}
             save();
         }else{
-            url = "http://localhost:8000/note";
+            url = `${ORIGIN}/note`;
             method = "POST";
             body = {title:title.current,note:note.current};
             const titleinfo = await checkTitleAvailability();

@@ -65,11 +65,11 @@ export default function NoteEditor(){
     function handleNotes(e:React.ChangeEvent<HTMLTextAreaElement>){
         note.current = e.currentTarget.value;        
         if(mode === EDITOR_MODE.EDITING_MODE){   
-            updateDebounce(`http://localhost:8000/note/:${location.state.id}`);
+            updateDebounce(` https://noteeditor2.onrender.com/note/:${location.state.id}`);
         }
     }
     async function checkTitleAvailability(){
-        const url = `http://localhost:8000/title/:${title.current}`
+        const url = ` https://noteeditor2.onrender.com/title/:${title.current}`
         const response = await sendRequest(url,"GET");
         return response;
     }

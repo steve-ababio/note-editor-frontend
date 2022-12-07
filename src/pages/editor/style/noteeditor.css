@@ -8,6 +8,9 @@
     color:rgb(125, 127, 130);
     padding-block: 20px;
 }
+.notes__count{
+    color:rgb(15, 115, 246);
+}
 .note-editor__styles{
     inline-size: 80%;
     margin-block-end: 10px;

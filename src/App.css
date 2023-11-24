@@ -1,0 +1,27 @@
+.flex{
+    display:flex;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-col{
+    flex-direction: column;
+}
+.jus-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.text-align-center{
+    text-align: center;
+}
+.mi-10{
+    margin-inline: 10px;
+}
+.mb-10{
+    margin-block: 10px;
+}
+.mi-auto{
+    margin-inline:auto;
+}

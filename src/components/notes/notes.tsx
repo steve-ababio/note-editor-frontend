@@ -17,7 +17,7 @@ export default function Notes(){
     const [message,setMessage] = useState("");
     const [noteid,setNoteId] = useState("");
     const [deleting,setDeleting] = useState(false);
-    const [response,setReponse] = useFetch<INote[]>(" https://note-editor-backendjs.vercel.app/allnotes",setLoading,{method:"GET"});
+    const [response,setReponse] = useFetch<INote[]>("https://note-editor-backendjs.vercel.app/allnotes",setLoading,{method:"GET"});
 
     useEffect(()=>{
        const remainingNotes = response.filter(note=>(note.id !== noteid));

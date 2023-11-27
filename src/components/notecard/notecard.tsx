@@ -31,7 +31,7 @@ const NoteCard:FunctionComponent<INoteCardProp> = ({id,title,note,lastmodified,d
         let message:string = "";
         try{
             setDeleting(true)
-            let response = await fetch(`${ORIGIN}/:${id}`,{method:"DELETE"});
+            let response = await fetch(`${ORIGIN}/note/:${id}`,{method:"DELETE"});
             let messageobj = await response.json();
             message = messageobj.message;
         }catch(error){

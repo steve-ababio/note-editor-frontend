@@ -17,7 +17,7 @@ const ALIGN_TYPE = {
     right:"right"
 };
 type FetchBodyType = object|string|null;
-const ORIGIN =  "https://noteeditor2.onrender.com";
+const ORIGIN =  "https://noteeditorbackendpro.onrender.com";
 export default function NoteEditor(){
     const title = useRef("");   
     const note = useRef(""); 

@@ -142,7 +142,7 @@ export default function NoteEditor(){
         const response = await serializedresponse.json();
         return response;                       
     }    
-    function debounce(cb:Function,delay=300){        
+    function debounce(cb:Function,delay=800){        
         return function(...args:any[]){ 
             clearTimeout(debouncetimeout.current);
             debouncetimeout.current = setTimeout(()=>{

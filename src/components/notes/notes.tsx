@@ -4,6 +4,7 @@ import NoteCard from '../notecard/notecard';
 import "./style/notes.css";
 
 import Toast from "../toast/toast";
+import { ORIGIN } from "../../config/config";
 
 interface INote{
     id:string,
@@ -17,7 +18,7 @@ export default function Notes(){
     const [message,setMessage] = useState("");
     const [noteid,setNoteId] = useState("");
     const [deleting,setDeleting] = useState(false);
-    const [response,setReponse] = useFetch<INote[]>("https://noteeditorbackendpro.onrender.com/allnotes",setLoading,{method:"GET"});
+    const [response,setReponse] = useFetch<INote[]>(`${ORIGIN}/allnotes`,setLoading,{method:"GET"});
 
     useEffect(()=>{
        const remainingNotes = response.filter(note=>(note.id !== noteid));

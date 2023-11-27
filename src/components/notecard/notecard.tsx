@@ -3,6 +3,7 @@ import {FiEdit2} from "react-icons/fi";
 import {AiOutlineDelete} from "react-icons/ai";
 import {useNavigate} from "react-router-dom";
 import "./style/notecard.css";
+import { ORIGIN } from "../../config/config";
 
 type ReactStringStateAction = React.Dispatch<React.SetStateAction<string>>;
 interface INoteCardProp{
@@ -30,7 +31,7 @@ const NoteCard:FunctionComponent<INoteCardProp> = ({id,title,note,lastmodified,d
         let message:string = "";
         try{
             setDeleting(true)
-            let response = await fetch(`https://noteeditor2.onrender.com/note/:${id}`,{method:"DELETE"});
+            let response = await fetch(`${ORIGIN}/:${id}`,{method:"DELETE"});
             let messageobj = await response.json();
             message = messageobj.message;
         }catch(error){

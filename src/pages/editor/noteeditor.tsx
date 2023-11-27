@@ -5,6 +5,7 @@ import {CiTextAlignCenter,CiTextAlignJustify,CiTextAlignLeft,CiTextAlignRight} f
 import {useLocation} from "react-router-dom";
 import "./style/noteeditor.css";
 import { useEffect } from 'react';
+import { ORIGIN } from "../../config/config";
 
 const EDITOR_MODE = {
     EDITING_MODE:"editing",
@@ -17,7 +18,7 @@ const ALIGN_TYPE = {
     right:"right"
 };
 type FetchBodyType = object|string|null;
-const ORIGIN =  "https://noteeditorbackendpro.onrender.com";
+
 export default function NoteEditor(){
     const title = useRef("");   
     const note = useRef(""); 
